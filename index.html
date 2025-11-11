@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Raghu - Holistic Health & Wellness Consultant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="logo">Dr. Raghu</div>
+        </div>
+    </nav>
+
+    <button class="hamburger-menu" id="hamburger-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li class="services-dropdown">
+            <span class="services-title">Services</span>
+            <ul class="dropdown-menu">
+                <li><a href="psychiatry.html">🧠 Psychiatric Consultation</a></li>
+                <li><a href="lifestyle.html">💪 Lifestyle Medicine</a></li>
+                <li><a href="spiritual.html">🕉️ Spiritual Wellness</a></li>
+                <li><a href="music.html">🎵 Music Therapy</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="doctor-profile">
+                    <div class="profile-image-container">
+                        <img id="profile-image" src="assets/profile-photo.png" alt="Dr. Raghu" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="doctor-name">Dr. Raghu</h1>
+                        <p class="doctor-title">Psychiatrist • Lifestyle Medicine • Music Therapy</p>
+                        <p class="doctor-motto">Holistic approach to mental health, wellness, and spiritual growth</p>
+                        <div class="consultation-badge">
+                            <span>🕒 Online Consultations: Monday - Friday</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">About Dr. Raghu</h2>
+            <div class="about-text">
+                <p class="intro-paragraph">Embark on a transformative journey towards mental well-being under the expert guidance of Dr. Raghu, our distinguished Head of Psychiatry and Senior Consultant. Dr. Raghu is not just a psychiatrist; he is a compassionate advocate for mental health, seamlessly blending profound medical knowledge with an unwavering commitment to personalized care.</p>
+                
+                <p>In his role as the Head of Psychiatry and lead consultant, Dr. Raghu spearheads our mission to redefine mental health care with a relentless focus on transformative outcomes. His dedication transcends clinical excellence, symbolizing a lifelong commitment to ensuring each patient experiences the pinnacle of compassionate and specialized support. In the intricate realm of psychiatry, Dr. Raghu stands as a guiding force, effortlessly blending traditional expertise with innovative solutions.</p>
+                
+                <p>Beyond traditional psychiatry, Dr. Raghu offers a unique holistic approach encompassing lifestyle medicine for chronic disease management, spiritual wellness programs, and therapeutic music interventions. This comprehensive methodology addresses not just mental health, but overall well-being through evidence-based lifestyle modifications and ancient wisdom practices.</p>
+                
+                <p class="closing-paragraph">Make the empowering choice to select Dr. Raghu, whose dynamic approach ensures that your confidence in his care is the initial step toward a future of enduring mental health and holistic wellness. Your well-being is entrusted to the hands of a compassionate leader, committed to ensuring every aspect of your care is marked by genuine medical excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="section-container">
+            <h2 class="section-title">Comprehensive Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">🧠</div>
+                    <h3>Psychiatric Consultation</h3>
+                    <p>Expert mental health assessments, diagnosis, and personalized treatment plans</p>
+                    <a href="psychiatry.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💪</div>
+                    <h3>Lifestyle Medicine</h3>
+                    <p>Weight loss, diabetes reversal, BP management, and heart health optimization</p>
+                    <a href="lifestyle.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🕉️</div>
+                    <h3>Spiritual Wellness</h3>
+                    <p>Spiritual courses and guidance for inner peace and personal transformation</p>
+                    <a href="spiritual.html" class="service-link">Coming Soon</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🎵</div>
+                    <h3>Music Therapy</h3>
+                    <p>Mridangam classes, concerts, and therapeutic music interventions</p>
+                    <a href="music.html" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="appointment-section">
+        <div class="section-container">
+            <h2 class="section-title">Schedule Your Consultation</h2>
+            <div class="appointment-content">
+                <div class="appointment-info">
+                    <h3>Ready to begin your wellness journey?</h3>
+                    <p>Book your personalized consultation with Dr. Raghu and take the first step towards holistic health and well-being.</p>
+                    <div class="availability-info">
+                        <h4>📅 Availability</h4>
+                        <p><strong>Online Consultations:</strong> Monday through Friday</p>
+                        <p>Flexible scheduling for all services</p>
+                    </div>
+                </div>
+                <form class="appointment-form" id="appointment-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="patient-name">Full Name</label>
+                            <input type="text" id="patient-name" name="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="patient-email">Email Address</label>
+                            <input type="email" id="patient-email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="patient-phone">Phone Number</label>
+                            <input type="tel" id="patient-phone" name="phone" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="consultation-type">Service Type</label>
+                            <select id="consultation-type" name="type" required>
+                                <option value="">Select Service</option>
+                                <option value="psychiatry">Psychiatric Consultation</option>
+                                <option value="lifestyle">Lifestyle Medicine</option>
+                                <option value="spiritual">Spiritual Wellness</option>
+                                <option value="music">Music Therapy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="preferred-date">Preferred Date</label>
+                            <input type="date" id="preferred-date" name="date" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="preferred-time">Preferred Time</label>
+                            <select id="preferred-time" name="time" required>
+                                <option value="">Select Available Time Slot</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Additional Information (Optional)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Please share any specific concerns or questions you'd like to discuss"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="submit-btn whatsapp-btn" id="whatsapp-btn">Send WhatsApp</button>
+                        <button type="button" class="submit-btn email-btn" id="email-btn">Send Email</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Dr. Raghu</h3>
+                    <p>Holistic Health & Wellness Consultant</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Comprehensive care for mind, body, and spirit</p>
+                    <p>&copy; 2025 Dr. Raghu. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
