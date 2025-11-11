@@ -9,6 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const servicesDropdown = document.querySelector('.services-dropdown');
     const servicesTitle = document.querySelector('.services-title');
 
+    // Make service items clickable
+    const serviceItems = document.querySelectorAll('.service-item');
+    serviceItems.forEach(item => {
+        // Add pointer cursor to indicate clickability
+        item.style.cursor = 'pointer';
+        
+        item.addEventListener('click', function(e) {
+            // Don't trigger if clicking on the service link itself
+            if (e.target.classList.contains('service-link')) {
+                return;
+            }
+            
+            // Find the service link within this item
+            const serviceLink = item.querySelector('.service-link');
+            if (serviceLink) {
+                const href = serviceLink.getAttribute('href');
+                if (href && href !== '#' && !serviceLink.textContent.includes('Coming Soon')) {
+                    window.location.href = href;
+                }
+            }
+        });
+    });
+
     // Add hamburger menu click event listener
     if (hamburgerMenu && navMenu) {
         hamburgerMenu.addEventListener('click', function() {
