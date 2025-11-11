@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize time slots when page loads
     initializeTimeSlots();
     
+    // Initialize date restrictions
+    initializeDateRestrictions();
+    
     // Hamburger menu toggle
     const hamburgerMenu = document.getElementById('hamburger-menu');
     const navMenu = document.getElementById('nav-menu');
@@ -32,54 +35,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hamburger menu click event listener
-    if (hamburgerMenu && navMenu) {
-        hamburgerMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburgerMenu.classList.toggle('active');
-        });
-    }
+    // Function to initialize date restrictions
+    function initializeDateRestrictions() {
+        const dateInput = document.getElementById('preferred-date');
+        if (!dateInput) return;
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!hamburgerMenu.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
-        }
-    });
+        // Get today's date
+        const today = new Date();
+        const todayString = today.toISOString().split('T')[0];
 
-    // Close menu when clicking on nav links (for mobile)
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
-        });
-    });
+        // Calculate 14 days from today
+        const maxDate = new Date();
+        maxDate.setDate(today.getDate() + 14);
+        const maxDateString = maxDate.toISOString().split('T')[0];
 
-    // Services dropdown functionality
-    if (servicesTitle && servicesDropdown) {
-        servicesTitle.addEventListener('click', function(e) {
-            e.preventDefault();
-            servicesDropdown.classList.toggle('active');
-        });
+        // Set min and max attributes
+        dateInput.setAttribute('min', todayString);
+        dateInput.setAttribute('max', maxDateString);
 
-        // Close services dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!servicesTitle.contains(e.target) && !servicesDropdown.contains(e.target)) {
-                servicesDropdown.classList.remove('active');
+        // Add event listener to validate date selection
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const todayDate = new Date(todayString);
+            const maxAllowedDate = new Date(maxDateString);
+
+            if (selectedDate < todayDate) {
+                alert('Please select a date starting from today.');
+                this.value = '';
+                return;
             }
-        });
 
-        // Close services dropdown when clicking on a service link
-        const serviceLinks = servicesDropdown.querySelectorAll('a');
-        serviceLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                servicesDropdown.classList.remove('active');
-                // Also close mobile menu if open
-                navMenu.classList.remove('active');
-                hamburgerMenu.classList.remove('active');
-            });
+            if (selectedDate > maxAllowedDate) {
+                alert('Please select a date within the next 14 days.');
+                this.value = '';
+                return;
+            }
         });
     }
 
@@ -168,6 +158,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
         }
+
+        // Additional date validation
+        const dateInput = document.getElementById('preferred-date');
+        if (dateInput && dateInput.value) {
+            const selectedDate = new Date(dateInput.value);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time to start of day
+            
+            const maxDate = new Date();
+            maxDate.setDate(today.getDate() + 14);
+            maxDate.setHours(23, 59, 59, 999); // End of day
+
+            if (selectedDate < today) {
+                alert('Please select a date starting from today.');
+                dateInput.focus();
+                return false;
+            }
+
+            if (selectedDate > maxDate) {
+                alert('Please select a date within the next 14 days.');
+                dateInput.focus();
+                return false;
+            }
+        }
+
         return true;
     }
 
