@@ -188,6 +188,17 @@ body {
     z-index: -1;
 }
 
+/* Small mobile devices */
+@media (max-width: 480px) {
+    /* ...existing small mobile styles... */
+    
+    /* Overlay adjustment for small mobile */
+    .nav-menu.active::before {
+        left: 260px; /* Matches small mobile nav-menu width */
+        width: calc(100vw - 260px);
+    }
+}
+
 .hero-section {
     margin-top: 80px;
     padding: 4rem 2rem;
@@ -699,6 +710,12 @@ body {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    /* Overlay adjustment for mobile */
+    .nav-menu.active::before {
+        left: 280px; /* Matches mobile nav-menu width */
+        width: calc(100vw - 280px);
+    }
+
     /* Navigation adjustments */
     .nav-container {
         padding: 1rem;
@@ -923,8 +940,14 @@ body {
 
 /* Small mobile devices */
 @media (max-width: 480px) {
+    /* Overlay adjustment for small mobile */
+    .nav-menu.active::before {
+        left: 300px; /* Matches small mobile nav-menu width */
+        width: calc(100vw - 300px);
+    }
+
     .nav-menu {
-        width: 260px;
+        width: 300px;
     }
     
     .doctor-name {
