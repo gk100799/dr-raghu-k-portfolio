@@ -12,6 +12,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const servicesDropdown = document.querySelector('.services-dropdown');
     const servicesTitle = document.querySelector('.services-title');
 
+    // Add hamburger menu click event listener
+    if (hamburgerMenu && navMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburgerMenu.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking on nav links (for mobile)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+        });
+    });
+
+    // Services dropdown functionality
+    if (servicesTitle && servicesDropdown) {
+        servicesTitle.addEventListener('click', function(e) {
+            e.preventDefault();
+            servicesDropdown.classList.toggle('active');
+        });
+
+        // Close services dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!servicesTitle.contains(e.target) && !servicesDropdown.contains(e.target)) {
+                servicesDropdown.classList.remove('active');
+            }
+        });
+
+        // Close services dropdown when clicking on a service link
+        const serviceLinks = servicesDropdown.querySelectorAll('a');
+        serviceLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                servicesDropdown.classList.remove('active');
+                // Also close mobile menu if open
+                navMenu.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            });
+        });
+    }
+
     // Make service items clickable
     const serviceItems = document.querySelectorAll('.service-item');
     serviceItems.forEach(item => {
