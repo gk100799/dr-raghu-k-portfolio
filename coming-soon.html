@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Dr. Raghu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="logo">Dr. Raghu</div>
+        </div>
+    </nav>
+
+    <button class="hamburger-menu" id="hamburger-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#appointment">Book Appointment</a></li>
+        <li class="services-dropdown">
+            <span class="services-title">Services</span>
+            <ul class="dropdown-menu">
+                <li><a href="psychiatry.html">🧠 Psychiatric Consultation</a></li>
+                <li><a href="lifestyle.html">💪 Lifestyle Medicine</a></li>
+                <li><a href="spiritual.html">🕉️ Spiritual Wellness</a></li>
+                <li><a href="music.html">🎵 Music Therapy</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <main>
+        <section class="service-hero">
+            <div class="section-container">
+                <div class="service-header">
+                    <div class="service-icon-large">🚀</div>
+                    <h1>New Service Coming Soon</h1>
+                    <p class="service-subtitle">Consciousness-led healing innovations in development</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-content">
+            <div class="section-container">
+                <div class="coming-soon-announcement">
+                    <div class="announcement-card">
+                        <h2>🌟 Exciting New Service in Development!</h2>
+                        <p class="intro-paragraph">Dr. Raghu is currently developing new consciousness-led healing services that integrate meditation-based approaches with cutting-edge wellness techniques.</p>
+                        
+                        <div class="notify-section">
+                            <h3>Get Notified When Available</h3>
+                            <p>Be the first to experience our new consciousness-led healing services!</p>
+                            <div class="notify-form">
+                                <div class="notify-input-group">
+                                    <input type="email" placeholder="Your email address" id="notify-email">
+                                    <button onclick="notifyWhenReady()">Notify Me</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-cta">
+                    <h3>Explore Available Services</h3>
+                    <p>While we develop new offerings, explore our current consciousness-led healing services.</p>
+                    <a href="index.html#services" class="cta-button">View All Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        function notifyWhenReady() {
+            const email = document.getElementById('notify-email').value;
+            if (email) {
+                alert('Thank you! You will be notified when this service becomes available.');
+                document.getElementById('notify-email').value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        }
+    </script>
+</body>
+</html>
