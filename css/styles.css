@@ -1974,7 +1974,6 @@ body {
 /* Mobile responsive for floating button */
 @media (max-width: 768px) {
     .floating-appointment-btn {
-        bottom: 15px;
         right: 15px;
         padding: 12px 20px;
         font-size: 14px;
@@ -1983,7 +1982,6 @@ body {
 
 @media (max-width: 480px) {
     .floating-appointment-btn {
-        bottom: 10px;
         right: 10px;
         padding: 10px 18px;
         font-size: 13px;
