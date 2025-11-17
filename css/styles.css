@@ -1988,3 +1988,33 @@ body {
         border-radius: 40px;
     }
 }
+
+/* Ideal Candidates Section Mobile Responsive */
+@media (max-width: 768px) {
+    .candidates-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .candidate-card {
+        padding: 1.5rem !important;
+    }
+    
+    .candidate-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    #ideal-candidates {
+        padding: 3rem 1rem !important;
+    }
+    
+    #ideal-candidates .section-container p {
+        padding: 0 1rem !important;
+        font-size: 1rem !important;
+    }
+    
+    #ideal-candidates .cta-button {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
