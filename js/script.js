@@ -385,4 +385,32 @@ document.addEventListener('DOMContentLoaded', function() {
             notifyForm.reset();
         });
     }
+
+    // Testimonials carousel
+    const testimonialCarousel = document.querySelector('.testimonial-carousel');
+    if (testimonialCarousel) {
+        const slides = testimonialCarousel.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        }
+
+        testimonialCarousel.querySelector('.testimonial-prev').addEventListener('click', () => showSlide(currentSlide - 1));
+        testimonialCarousel.querySelector('.testimonial-next').addEventListener('click', () => showSlide(currentSlide + 1));
+        dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+
+        testimonialCarousel.querySelectorAll('.testimonial-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const fullText = document.getElementById(toggle.getAttribute('aria-controls'));
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                fullText.hidden = expanded;
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                toggle.textContent = expanded ? 'Read full story' : 'Show less';
+            });
+        });
+    }
 });
