@@ -2018,3 +2018,52 @@ body {
         font-size: 0.9rem !important;
     }
 }
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    margin: 0;
+    background: #f8f9ff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid #2c5aa0;
+}
+
+.testimonial-text {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.testimonial-text p {
+    margin-bottom: 1rem;
+}
+
+.testimonial-name {
+    margin-top: 1.5rem;
+    color: #2c5aa0;
+    font-weight: 600;
+    text-align: right;
+}
+
+.testimonial-name::before {
+    content: "— ";
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        gap: 1.5rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+}
